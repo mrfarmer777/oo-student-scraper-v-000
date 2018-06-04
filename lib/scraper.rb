@@ -15,13 +15,14 @@ class Scraper
     html=open(index_url)
     doc=Nokogiri::HTML(html)
     student_data=doc.css(".student-card")
-    binding.pry
+    #binding.pry
     student_data.each do |student|
       name = student.css('.card-text-container .student-name').text
       location=student.css('.card-text-container .student-location').text
       binding.pry
       stu_hash={name: name, location:location}
       scraped_stus<<stu_hash
+      binding.pry
     end
     scraped_stus
   end
