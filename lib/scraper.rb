@@ -38,9 +38,9 @@ class Scraper
       soc_link=social.attribute("href").text
       binding.pry
       case soc_link
-      when .include?('facebook')
+      when soc_link.include?('facebook')
         stu_hash[:facebook]=soc_link
-      when .include?('linkedin')
+      when soc_link.include?('linkedin')
         stu_hash[:linkedin]=soc_link
       end
       binding.pry
