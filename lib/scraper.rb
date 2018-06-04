@@ -55,7 +55,7 @@ class Scraper
     quote=doc.css("profile-quote").text    
     bio=doc.css("description-holder p").text
     
-    stu_hash={quote:quote, bio:bio, twitter:twitter, github:github, blog:blog, linkedin:linked, facebook:facebook}
+    stu_hash={profile_quote:quote, bio:bio, twitter:twitter, github:github, blog:blog, linkedin:linked, facebook:facebook}
   end
 
 end
