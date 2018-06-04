@@ -43,12 +43,12 @@ class Scraper
       end
       binding.pry
     end
-      
+
     quote=doc.css("profile-quote").text
     stu_hash[:quote]=quote
     bio=doc.css("description-holder p").text
     stu_hash[:bio]=bio
-
+    stu_hash
   end
 
 end
