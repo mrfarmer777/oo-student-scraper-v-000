@@ -31,10 +31,24 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     html=open(profile_url)
     doc=Nokogiri::HTML(html)
+    stu_hash={}
     socials=doc.css(".social-icon-container a")
+    socials.each do |social|
+      soc_link=social.attribute("href").text
+      case soc_link
+      when .include?('facebook')
+        stu_hash[:facebook]=soc_link
+      when .include?('linkedin')
+        stu_hash[:linkedin]=soc_link
+      end
+      binding.pry
+    end
+      
     quote=doc.css("profile-quote").text
+    stu_hash[:quote]=quote
     bio=doc.css("description-holder p").text
-    
+    stu_hash[:bio]=bio
+
   end
 
 end
