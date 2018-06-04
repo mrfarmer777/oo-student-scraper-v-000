@@ -21,7 +21,7 @@ class Scraper
       location=student.css('.card-text-container .student-location').text
       stu_hash={name: name, location:location}
       scraped_stus<<stu_hash
-    end    
+    end
     scraped_stus
   end
 
