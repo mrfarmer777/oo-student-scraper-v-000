@@ -21,7 +21,7 @@ class Scraper
       location=student.css('.card-text-container .student-location').text
       profile_url=student.css('a').attribute("href").text
       #binding.pry
-      stu_hash={name: name, location:location}
+      stu_hash={name: name, location:location, profile_url:profile_url}
       scraped_stus<<stu_hash
       #binding.pry
     end
