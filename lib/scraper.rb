@@ -33,8 +33,10 @@ class Scraper
     doc=Nokogiri::HTML(html)
     stu_hash={}
     socials=doc.css(".social-icon-container a")
+    binding.pry
     socials.each do |social|
       soc_link=social.attribute("href").text
+      binding.pry
       case soc_link
       when .include?('facebook')
         stu_hash[:facebook]=soc_link
