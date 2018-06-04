@@ -39,9 +39,15 @@ class Scraper
       binding.pry
       case soc_link
       when soc_link.include?('facebook')
-        stu_hash[:facebook]=soc_link
+        facebook=soc_link
       when soc_link.include?('linkedin')
-        stu_hash[:linkedin]=soc_link
+        linkedin=soc_link
+      when soc_link.include?('twitter')
+        twitter=soc_link
+      when soc_link.include?('github')
+        github=soc_link
+      else
+        blog=soc_link
       end
       binding.pry
     end
